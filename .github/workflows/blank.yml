@@ -36,7 +36,11 @@ jobs:
           echo test, and deploy your project.
 
       # Runs a set slack connection
-      - name: action-slack
-        uses: slackapi/slack-github-action@v1.15.0
+      # - name: action-slack
+      #   uses: slackapi/slack-github-action@v1.15.0
+      #   env:
+      #     SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
