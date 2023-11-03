@@ -19,12 +19,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: action-slack
-        uses: 8398a7/action-slack@v3
-        with:
-          status: ${{ job.status }}
-          author_name: Sloth Backend - dev
-          fields: repo,commit,message,author # action,eventName,ref,workflow,job,took 추가할 수 있음
-          mention: here
-          if_mention: failure,cancelled
+        uses: slackapi/slack-github-action@v1.24.0
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
