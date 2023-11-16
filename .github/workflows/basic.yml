@@ -4,5 +4,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - run: echo hello world
+      - name: print
+        run: echo Hello World~ 🗺️
   
