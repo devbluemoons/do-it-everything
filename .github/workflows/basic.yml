@@ -8,12 +8,14 @@ jobs:
     steps:
       - name: print
         run: echo This is a "build" job area
-  test: # 원하는 job의 이름을 지정한다
+  test:
+    needs: build # 지정한 job이 종료된 후 실행
     runs-on: ubuntu-latest
     steps:
       - name: print
         run: echo This is a "test" job area
-  deploy: # 원하는 job의 이름을 지정한다
+  deploy:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: print
