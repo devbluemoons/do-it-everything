@@ -29,9 +29,9 @@ jobs:
       - name: planning terraform
         run: |
           echo planning~~ 🔥🔥
-          terraform plan
+          terraform plan 
 
       - name: applying terraform
         run: |
           echo planning~~ 🆗🆗
-          terraform apply
+          terraform apply -auto-approve -input=false
