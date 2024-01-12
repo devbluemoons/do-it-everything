@@ -30,3 +30,8 @@ jobs:
         run: |
           echo planning~~ 🔥🔥
           terraform plan
+
+      - name: applying terraform
+        run: |
+          echo planning~~ 🆗🆗
+          terraform apply
