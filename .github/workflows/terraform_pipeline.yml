@@ -21,17 +21,22 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ vars.AWS_REGION }}
           
-      - name: initializing terraform
-        run: | 
-          echo initalizing~~ 🚀🚀
-          terraform init
+      # - name: initializing terraform
+      #   run: | 
+      #     echo initalizing~~ 🚀🚀
+      #     terraform init
           
-      - name: planning terraform
-        run: |
-          echo planning~~ 🔥🔥
-          terraform plan 
+      # - name: planning terraform
+      #   run: |
+      #     echo planning~~ 🔥🔥
+      #     terraform plan 
 
-      - name: applying terraform
+      # - name: applying terraform
+      #   run: |
+      #     echo applying~~ 🆗🆗
+      #     terraform apply -auto-approve -input=false
+
+      - name: destroying terraform
         run: |
-          echo planning~~ 🆗🆗
-          terraform apply -auto-approve -input=false
+          echo destroying~~ 🆗🆗
+          terraform destroy -auto-approve -input=false
